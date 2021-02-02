@@ -1,0 +1,18 @@
+{% extends 'portfolio_app/index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+  <title>Update current project</title>
+  {% endblock %}
+{% block content %}
+<section>
+    <div class="container p-3 ">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" class="btn btn-success" value="Update Project">
+        </form>
+    </div>
+</section>
+
+{% endblock %}

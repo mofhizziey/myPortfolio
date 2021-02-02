@@ -1,0 +1,55 @@
+{% extends 'portfolio_app/index.html' %}
+{% block title %}
+  <title>{{project.name}} Detail</title>
+  {% endblock %}
+
+{% block content %}
+<section class="">
+    <div class="container p-3 text-center">
+        <div class="card p-2">
+            <div class="card-head">
+                <h3>{{project.name}}</h3>
+                <small class="text-muted">{{project.date_created}}</small>
+            </div>
+            <div class="card-img-top">
+                <img src="{{project.screenshot.url}}" class="img-fluid" alt="An Error Occured, cant display image" srcset="">
+            </div>
+          <div class="card-body">  
+            <div class="container">
+                <h4 class="text-center">About the project</h4>
+                <p class="lead" style="font-size: 14px;">
+                    {{project.bio}}
+                    
+                </p><hr>
+                <div class="container">
+                    <h4 class="text-center">Type of web host</h4>
+                    <p class="lead" style="font-size: 14px;">
+                        <a href="">{{project.web_host_type}}</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+          <div class="container">
+            <h4 class="text-center">Web host provider</h4>
+            <p class="lead" style="font-size: 14px;">
+                <a href="">{{project.web_host_provider}}</a>
+            </p>
+        </div>
+          <div class="container">
+            <h4 class="text-center">Github Link</h4>
+            <p class="lead" style="font-size: 14px;">
+                <a href="{{project.link}}">{{project.link}}</a>
+            </p>
+        </div>
+      </div>
+          <div class="card-footer text-center">
+            <p><i class="fas fa-link"></i> {{project.url}}</p>
+          </div>
+        </div>
+      </div><br>
+      <a href="{% url 'index' %}" style="border: 0;" class="btn btn-danger btn-block">Go back</a>
+     
+</section>
+{% endblock %}
+
+

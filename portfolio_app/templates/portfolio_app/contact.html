@@ -1,0 +1,20 @@
+{% extends 'portfolio_app/index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{%block content%}
+<section>
+  {% if form.is_valid %}
+  <p class="alert alert-success">{{success_img}}</p>
+  {% endif %}
+  <div class="container p-3">
+ <form action="" method="POST">
+  {% csrf_token %}
+  {{form|crispy}}
+  <input type="submit" value="Send Message">
+ </form>
+
+  </div>
+</section>
+{%endblock%}

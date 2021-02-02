@@ -1,0 +1,165 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+  <title>Welcome to my personal portfolio</title>
+  {% endblock %}
+  <script src="https://kit.fontawesome.com/c7c0aedab8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'bootstrap-5/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.min.css' %}">
+
+</head>
+<body>
+  {%  block content %}
+  <section id="sec" class="container-fluid">
+    <div class="row" >
+      <div id="s1" class="col-sm-6 container-fluid bg-light">
+        <p style="font-size: 25px; font-weight:bold;">MO</p>
+        <div class="text-center " id="div-s1">
+          <br><br><br><br><br><br><br>
+          <p class="text-center" id="text-1">welcome to my</p>
+          <a href="" class=""><i style="font-size: 50px;" class="fas text-warning fa-smile"></i></a>
+        </div>
+      </div>
+      <div id="s2" class="col-sm-6 container-fluid bg-dark text-light">
+        <p style="font-size: 20px; text-decoration: none; color: white; font-weight:bold;"><a href="#projects" style="border-radius: 50px; font-size: 14px;" class="btn btn-outline-light">recent projects </a> </p>
+        <div class="text-center" id="div-s2">
+          <br><br><br><br><br><br><br>
+          <p class=" text-center" id="text-2">PORTFOLIO</p>
+          <a href="#bio" class="bg-danger text-center" style="border-radius: 50px; padding: 10px; border: 0; color: white;"><i class="fas fa-angle-down"></i></a>
+        </div>
+      </div>
+     
+    </div>
+   
+  </section>
+
+
+  <section class="p-4 bg-dark">
+    <div class="about-me container text-center p-3">
+      <h4 class="text-light" style="font-size: 16px; text-decoration: underline;">ABOUT ME</h4> <hr>
+      <p class="text-light" style="font-size: 16px;">My name is <span style="font-weight: bold;" class="text-danger">Enimofe Odujirin</span> <br> 
+        <small class="text-light" style="font-size: 14px;">i'm a fullstack web developer based in Lagos, Nigeria. 
+          I have about four (4) years experience in Python, product design and development.</small>
+        <br><br>
+        <a href="" class="btn btn-danger p-2" style="border-radius: 0;" id="learn-more">Hire me</a>
+      </p>
+    </div>
+  </section>
+
+
+  <section class="p-3">
+    <div id="bio" class="container text-center p-5">
+      <b style="font-weight: bold;">WHAT I DO <i class="text-success fas  fa-tv"></i></b><br><br>    
+      <p style="font-size: 20px; padding: 5px;" class="lead">Its pretty simple i create 
+      web applications for my clients (<span style="font-size: 12px;">Simple and Robust</span>). 
+        With Proper knowledge of both frontend and 
+        backend technologies i am able to 
+        turn my clients ideas into reality!</p>
+    </div> 
+  
+
+  </section>
+  <div  class="container-fluid bg-light p-3 text-center ">
+    <b style="font-weight: bold;">WHAT ELSE DO I DO</b>
+    <i class="fas fa-database text-danger"></i>
+    <p style="padding: px; " class="text-dark">
+      I design proffesional, bright and sleek UI/UX screens for my clients.
+    </p>
+  </div>
+
+  <div style="background-color: black;" class="container-fluid text-light  p-3 text-center"><br>
+
+    <p style="font-size: 13px;" class="lead">"Talented Junior Software Engineer adept at working with customers, 
+      team members and project leaders to accomplish software engineering and updating 
+      tasks according to timelines. Skilled working with wide range
+       of front and back-end technologies to produce and evaluate code."</p><br>
+
+
+  </div>
+  <div class="row" style="">
+
+    <div class="col-lg-4 container-fluid text-light text-center" style="padding: 100px; background-color: black;">
+
+      <b style="font-weight: lighter; background-color: black;" class="text-center text-danger">MY SERVICES</b> <hr> <br>
+      <i  class="far fa-window-restore text-primary"></i>
+     <h6>DESIGN + DEVELOPMENT</h6>
+     <p>Clean modern designs, optimised for performance, 
+       search engines and converting users to customers.</p>
+    </div>
+    <div style="padding: 100px;" class="col-lg-4  text-center container-fluid bg-light text-dark">
+      <i class="fas fa-mobile text-info"></i>
+      <h6>MOBILE FRIENDLY</h6>
+      <p>A responsive design makes your website
+         accessible to all users, 
+        regardless of their device.</p>
+    </div>
+    <div style="background-color: black; padding: 100px;" class="col-lg-4  container-fluid text-center text-light">
+     
+       <i class="fas fa-cart-plus text-warning"></i>
+       <h6>ECOMMERCE</h6>
+       <p>Integration of ecommerce platforms, 
+         payment gateways,
+          custom product templates and more.</p>
+    </div>
+  </div>
+
+  <section class="p-3">
+ <div class="text-center" id="projects">
+  <p class="lead text-center">A list of my projects </p>
+  <small class="text-center"><a href="#resume" style="transition: 2s;">You can also check out my CV/Resume</a> </small>
+ </div><br>
+{% for project in project_list %}
+<div class="container" >
+
+  <div class="card">
+    <div class="card-head text-center">
+      <p><a href="{{project.get_absolute_url}}">{{project.name}}</a></p>
+    </div>
+    <div class="card-body">
+      <img src="{{project.screenshot.url}}" class="img-fluid" alt="An Error Occured, cant display image" srcset="">
+    </div>
+    <div class="card-footer text-center">
+      <p><i class="fas fa-link"></i> <a href="{{project.url}}">{{project.url}}</a></p>
+    </div>
+  </div>
+
+</div><br>
+{% endfor %}
+
+    
+  </section>
+
+  <section>
+    <div class="text-center container">
+      <p>Would you like to contact me for hire?</p>
+      <a href="{% url 'portfolio_app:contact' %}" style="border-radius: 0;" class="btn btn-dark">YES</a>
+    </div><br>
+  </section>
+  <section id="resume" class="bg-danger container-fluid p-5"> 
+    <div class="text-center">
+      <h4 class="text-center text-light">MY RESUME</h4>
+      <p class="text-center text-light"></p> <span><a href="https://www.github.com/mofhizziey"><i class="fa fas-github"></i></a></span>
+      <p class="text-center text-light"></p> <span><a href="https://www.hackerrank.com/mofhizziey"><i class="fa fas-github"></i></a></span>
+      <p class="text-center text-light" style="font-size: 14px;">Would you like to view my resume or download? you might really be interested in my works. Click the button!</p>
+      <a href="{% static 'my_resume.pdf' %}" download="" class="text-center btn btn-outline-light btn-block" style="border-radius: 0;">Download Resume</a>
+    </div>
+  </section>
+
+<section class="p-5"> 
+  <footer>
+    <p class="text-center"> Made by @mo </p>
+  </footer>
+</section>
+
+  {% endblock %}
+</body>
+
+<script src="{% static 'js/jquery-3.5.0.js' %}"></script>
+<script src="{% static 'bootstrap-5/js/bootstrap.min.css' %}"></script>
+</html>
