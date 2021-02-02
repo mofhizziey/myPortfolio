@@ -5,6 +5,13 @@
 
 {%block content%}
 <section>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
   {% if form.is_valid %}
   <p class="alert alert-success">{{success_img}}</p>
   {% endif %}

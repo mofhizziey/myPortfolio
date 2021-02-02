@@ -3,6 +3,8 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from django.views.generic import TemplateView, CreateView, ListView, DetailView, UpdateView
 from portfolio_app import models
+from django.contrib import messages
+
 
 def contact(request):
     if request.POST == "POST":
@@ -13,7 +15,8 @@ def contact(request):
             text = form.cleaned_data['Text']
             recipients = "mofeodujirin@gmail.com"
             send_mail(subject, text, sender, recipients)
-            
+            messages.success(request, 'Mail Sent successfully')
+
             return reverse('portfolio_app:contact')
     else:
         form = ContactForm()
