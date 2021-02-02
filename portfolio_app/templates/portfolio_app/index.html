@@ -8,7 +8,12 @@
   {% block title %}
   <title>Welcome to my personal portfolio</title>
   {% endblock %}
+
+
   <script src="https://kit.fontawesome.com/c7c0aedab8.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
   <link rel="stylesheet" href="{% static 'bootstrap-5/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.min.css' %}">
@@ -30,7 +35,7 @@
         <p style="font-size: 20px; text-decoration: none; color: white; font-weight:bold;"><a href="#projects" style="border-radius: 50px; font-size: 14px;" class="btn btn-outline-light">recent projects </a> </p>
         <div class="text-center" id="div-s2">
           <br><br><br><br><br><br><br>
-          <p class=" text-center" id="text-2">PORTFOLIO</p>
+          <p class=" text-center" style="transition: 2s;" id="text-2">PORTFOLIO</p>
           <a href="#bio" class="bg-danger text-center" style="border-radius: 50px; padding: 10px; border: 0; color: white;"><i class="fas fa-angle-down"></i></a>
         </div>
       </div>
@@ -54,10 +59,10 @@
 
 
   <section class="p-3">
-    <div id="bio" class="container text-center p-5">
+    <div id="bio" style="" class="container text-center p-5">
       <b style="font-weight: bold;">WHAT I DO <i class="text-success fas  fa-tv"></i></b><br><br>
       <p style="font-size: 20px; padding: 5px;" class="lead">Its pretty simple i create
-      web applications for my clients (<span style="font-size: 12px;">Simple and Robust</span>).
+      web applications for my clients (<span class="text-danger" style="font-size: 10px; font-weight:bold;">Simple and Robust</span>).
         With Proper knowledge of both frontend and
         backend technologies i am able to
         turn my clients ideas into reality!</p>
@@ -73,25 +78,25 @@
     </p>
   </div>
 
-  <div style="background-color: black;" class="container-fluid text-light  p-2 text-center"><br>
+  <div style="background-color: black;" class="container-fluid text-light  p-3 text-center"><br>
 
     <p style="font-size: 13px;" class="lead">"Talented Junior Software Engineer adept at working with customers,
       team members and project leaders to accomplish software engineering and updating
       tasks according to timelines. Skilled working with wide range
        of front and back-end technologies to produce and evaluate code."</p><br>
   </div>
+      <div style="" class="text-center p-3 text-dark">MY SERVICES</b><div><br>
   <div class="row" style="">
 
     <div class="col-lg-4 container-fluid text-light text-center" style="padding: 100px; background-color: black;">
 
-      <b style="background-color: black;" class="text-center text-danger">MY SERVICES</b> <hr> <br>
-      <i  class="far fa-window-restore text-primary"></i>
-     <h6>DESIGN + DEVELOPMENT</h6>
+      <i  class="far fa-window-restore text-warning"></i>
+     <h6 class="text-warning">DESIGN + DEVELOPMENT</h6>
      <p>Clean modern designs, optimised for performance,
        search engines and converting users to customers.</p>
     </div>
     <div style="padding: 100px;" class="col-lg-4  text-center container-fluid bg-light text-dark">
-      <i class="fas fa-mobile text-info"></i>
+      <i class="fas fa-mobile text-warning"></i>
       <h6>MOBILE FRIENDLY</h6>
       <p>A responsive design makes your website
          accessible to all users,
@@ -100,7 +105,7 @@
     <div style="background-color: black; padding: 100px;" class="col-lg-4  container-fluid text-center text-light">
 
        <i class="fas fa-cart-plus text-warning"></i>
-       <h6>ECOMMERCE</h6>
+       <h6 class="text-warning">ECOMMERCE</h6>
        <p>Integration of ecommerce platforms,
          payment gateways,
           custom product templates and more.</p>
@@ -151,13 +156,29 @@
   </section>
 
 <section class="p-5">
-  <footer>
-    <p class="text-center lead"> Made by <i class="fas fa-user-astronaut text-canget"> Enimofe Odujirin</i></p>
+  <footer class="text-center">
+
+    <small style="font-size:12px;" class="text-center">Click any of the links below if you would like to contact me for gigs, collabs and so on.</small> <hr>
+    <a href="https://www.github.com/mofhizziey"><i style ='font-size:65px;'  class="fab fa-github text-center text-dark" ></i></a>
+    <a href="https://www.twitter.com/blaxcxx"><i style ='font-size:65px;'  class="pl-3 fab fa-twitter text-center text-info" ></i></a>
+    <a href="https://wa.me/+2349136082942"><i style ='font-size:65px;'  class="pl-3 fab fa-whatsapp text-success text-center" ></i></a>
   </footer>
 </section>
 
   {% endblock %}
 </body>
+
+
+
+
+<script>
+
+  gsap.from('#sec', {opacity:0, duration: 3, y:-50})
+
+
+</script>
+
+
 
 <script src="{% static 'js/jquery-3.5.0.js' %}"></script>
 <script src="{% static 'bootstrap-5/js/bootstrap.min.css' %}"></script>
