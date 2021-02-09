@@ -39,7 +39,7 @@ class ProjectDetailView(DetailView):
 class ProjectCreateView(CreateView):
     model = models.Project
     template_name = 'portfolio_app/new_project.html'
-    fields = ['name', 'screenshot', 'bio', 'url', 'link']
+    fields = ['name', 'screenshot', 'bio', 'url', 'link', 'web_host_type', 'web_host_provider']
 
 
 class ProjectUpdateView(UpdateView):

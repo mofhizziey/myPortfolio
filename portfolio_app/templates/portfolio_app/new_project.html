@@ -5,12 +5,12 @@
   {% endblock %}
 {% block content %}
 <section class="p-3">
-    <div class="container">
+    <div class="container p-2 offset">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{form |crispy}}
-            <input type="submit" class="btn btn-success" value="Create New Project" name="" id="">
+            {{form |crispy}} <hr>
+            <input type="submit" class="btn btn-success btn-block btn-lg" value="Create New Project" name="" id="">
         </form>
-      </div><br>
+      </div>
 </section>
 {% endblock %}

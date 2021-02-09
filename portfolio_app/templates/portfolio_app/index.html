@@ -78,7 +78,7 @@
     </p>
   </div>
 
-  <div style="background-color: black;" class="container-fluid text-light  p-3 text-center"><br>
+  <div style="" class="container-fluid text-light bg-dark  p-3 text-center"><br>
 
     <p style="font-size: 13px;" class="lead">"Talented Junior Software Engineer adept at working with customers,
       team members and project leaders to accomplish software engineering and updating
@@ -88,25 +88,25 @@
       <div style="" class="text-center p-3 text-dark">MY SERVICES</b><div><br>
   <div class="row" style="">
 
-    <div class="col-lg-4 container-fluid text-light text-center" style="padding: 100px; background-color: black;">
+    <div class="col-lg-4 container-fluid text-light bg-dark text-center" style="padding: 100px;">
 
-      <i  class="far fa-window-restore text-warning"></i>
-     <h6 class="text-warning">DESIGN + DEVELOPMENT</h6>
-     <p>Clean modern designs, optimised for performance,
+      <i  class="far fa-window-restore text-danger"></i>
+     <h6 class="text-danger">DESIGN + DEVELOPMENT</h6>
+     <p class='lead' style='font-size:16px;'>Clean modern designs, optimised for performance,
        search engines and converting users to customers.</p>
     </div>
     <div style="padding: 100px;" class="col-lg-4  text-center container-fluid bg-light text-dark">
-      <i class="fas fa-mobile text-warning"></i>
-      <h6>MOBILE FRIENDLY</h6>
-      <p>A responsive design makes your website
+      <i class="fas fa-mobile text-danger"></i>
+      <h6 class="text-danger">MOBILE FRIENDLY</h6>
+      <p class='lead' style='font-size:16px;'>A responsive design makes your website
          accessible to all users,
         regardless of their device.</p>
     </div>
-    <div style="background-color: black; padding: 100px;" class="col-lg-4  container-fluid text-center text-light">
+    <div style="padding: 100px;" class="col-lg-4 bg-dark  container-fluid text-center text-light">
 
-       <i class="fas fa-cart-plus text-warning"></i>
-       <h6 class="text-warning">ECOMMERCE</h6>
-       <p>Integration of ecommerce platforms,
+       <i class="fas fa-cart-plus text-danger"></i>
+       <h6 class="text-danger">ECOMMERCE</h6>
+       <p class='lead' style='font-size:16px;'>Integration of ecommerce platforms,
          payment gateways,
           custom product templates and more.</p>
     </div>
@@ -116,14 +116,14 @@
  <div class="text-center" id="projects">
    <i class="fas fa-tasks text-center text-danger"></i>
   <p class="lead text-center">My Projects </p>
-  <small class="text-center"><a href="#resume" style="transition: 2s;">You can also check out my CV/Resume</a> </small>
+  <small class="text-center"><a href="#resume" class='text-danger' style="transition: 2s; text-decoration:none;">You can also check out my CV/Resume</a> </small>
  </div><br>
 {% for project in project_list %}
 <div class="container" >
 
-  <div class="card">
-    <div class="card-head text-center">
-      <p><a href="{{project.get_absolute_url}}">{{project.name}}</a></p>
+  <div class="card" style='border-radius:0; box-shadow:4px;'>
+    <div class="card-head bg-danger p-2 text-center">
+      <p><a class='text-light' href="{{project.get_absolute_url}}">{{project.name}}</a></p>
     </div>
     <div class="card-body">
       <img src="{{project.screenshot.url}}" class="img-fluid" alt="An Error Occured, cant display image" srcset="">

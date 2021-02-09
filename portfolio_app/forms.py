@@ -15,6 +15,7 @@ class ContactForm(forms.Form):
 
 class ProjectForm(forms.ModelForm):
     name = forms.CharField(max_length=250, help_text='Enter latest project name', label='Project Name')
+    link = forms.CharField(max_length=250, help_text='My github link serves as a major portfolio showing alot of my past and current works.', label='Github link')
     class Meta:
         model = models.Project
-        fields = ['name', 'screenshot', 'bio', 'url']
+        fields = ['name', 'screenshot', 'link', 'bio', 'url', 'web_host_type', 'web_host_provider']
