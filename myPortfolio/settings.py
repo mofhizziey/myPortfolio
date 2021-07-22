@@ -25,7 +25,7 @@ SECRET_KEY = '1=hl6%)au@(s5&zg+1big3md+m5-(70n9jrxw5w1&d+4mo+11%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://git.heroku.com/young-depths-60790.git', 'localhost']
+ALLOWED_HOSTS = ['https://young-depths-60790.herokuapp.com/', 'localhost']
 
 
 # Application definition
