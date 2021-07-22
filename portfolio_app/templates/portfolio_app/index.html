@@ -60,7 +60,8 @@
 
   <section class="p-3">
     <div id="bio" style="" class="container text-center p-5">
-      <b style="font-weight: bold;">WHAT I DO <i class="text-success fas  fa-tv"></i></b><br><br>
+      <i class="text-success fas  fa-tv"></i><br>
+      <b style="font-weight: bold;">WHAT I DO </b><br>
       <p style="font-size: 20px; padding: 5px;" class="lead">Its pretty simple i create
       web applications for my clients (<span class="text-danger" style="font-size: 10px; font-weight:bold;">Simple and Robust</span>).
         With Proper knowledge of both frontend and
@@ -71,8 +72,9 @@
 
   </section>
   <div  class="container-fluid bg-light p-3 text-center ">
+    <i class="fas fa-database text-danger"></i><br>
     <b style="font-weight: bold;">WHAT ELSE DO I DO</b>
-    <i class="fas fa-database text-danger"></i>
+ 
     <p style="padding: px; " class="text-dark">
       I design proffesional, bright and sleek UI/UX screens for my clients.
     </p>
@@ -122,11 +124,11 @@
 <div class="container" >
 
   <div class="card" style='border-radius:0; box-shadow:4px;'>
-    <div class="card-head bg-danger p-2 text-center">
+    <div class="card-head bg-dark p-2 text-center">
       <p><a class='text-light' href="{{project.get_absolute_url}}">{{project.name}}</a></p>
     </div>
     <div class="card-body">
-      <img src="{{project.screenshot.url}}" class="img-fluid" alt="An Error Occured, cant display image" srcset="">
+      <img src="{{project.screenshot.url}}" style="height: 96px;" class="img-fluid" alt="An Error Occured, cant display image" srcset="">
     </div>
     <div class="card-footer text-center">
       <p><i class="fas fa-link"></i> <a href="{{project.url}}">{{project.url}}</a></p>
@@ -173,7 +175,7 @@
 
 <script>
 
-  gsap.from('#sec', {opacity:0, duration: 3, y:-50})
+  gsap.from('#sec', {opacity:0, duration: 1, y:-50})
 
 
 </script>
